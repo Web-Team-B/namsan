@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namsan Traffic Test</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="{{ url_for('namsan.static', filename='namsan.js') }}" defer></script>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            flex: 2;
+            margin: 20px;
+            border-right: 1px solid #ccc;
+        }
+
+        #charts {
+            flex: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .chart {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-left: -40px; /* 왼쪽으로 살짝 이동 */
+            font-family: Arial, sans-serif;
+        }
+
+        #result {
+            position: absolute;
+            bottom: 180px;
+            left: 60px;
+
+            font-family: Arial, sans-serif;
+
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <h1>실제 남산 교통 데이터 분석</h1>
+        <svg id="main-road" width="600" height="400"></svg>
+    </div>
+
+    <div id="charts">
+        <div id="chart1" class="chart"></div>
+        <div id="chart2" class="chart"></div>
+        <div id="chart3" class="chart"></div>
+        <div id="chart4" class="chart"></div>
+    </div>
+
+    <div id="result"></div>
+</body>
+</html>
